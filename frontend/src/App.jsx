@@ -243,7 +243,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/compression/${operation}`, formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/compression/${operation}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`
@@ -280,7 +280,7 @@ function App() {
   
     const fetchHistory = async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/history`, {
+            const response = await axios.get(`${API_BASE_URL}/api/history`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setHistory(response.data);
@@ -291,7 +291,7 @@ function App() {
     
     const handleDownload = async (filename) => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/download/${filename}`, {
+            const response = await axios.get(`${API_BASE_URL}/api/download/${filename}`, {
                 responseType: 'blob',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
