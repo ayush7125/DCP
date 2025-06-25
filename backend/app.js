@@ -1,8 +1,4 @@
 const express = require('express');
-app.use((req, res, next) => {
-  console.log('Request:', req.method, req.originalUrl);
-  next();
-});
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
@@ -18,6 +14,10 @@ const authRoutes = require('./routes/authRoutes');
 const { router: historyRoutes, inMemoryHistory } = require('./routes/historyRoutes');
 
 const app = express();
+app.use((req, res, next) => {
+  console.log('Request:', req.method, req.originalUrl);
+  next();
+});
 const PORT = process.env.PORT || 5000;
 
 // MongoDB Connection
