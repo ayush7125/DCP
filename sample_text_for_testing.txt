@@ -1,0 +1,17 @@
+This is a sample text file for testing compression algorithms.
+Repetition is the key to good compression. Repetition is the key to good compression.
+The more repetition we have, the better the compression ratio will be.
+AAAAABBBBBCCCCCDDDDDEEEEE
+1111122222333334444455555
+Data compression is a fascinating subject.
+This file should compress well with algorithms like Huffman, RLE, LZW, and LZ77.
+Let's test it out. Test. Test. Test.
+Repetition is the key to good compression.
+This is a sample text file for testing compression algorithms.
+The more repetition we have, the better the compression ratio will be.
+AAAAABBBBBCCCCCDDDDDEEEEE
+1111122222333334444455555
+This is a sample text file for testing compression algorithms.
+This is a sample text file for testing compression algorithms.
+This is a sample text file for testing compression algorithms.
+The end. 
