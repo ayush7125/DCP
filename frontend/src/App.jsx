@@ -311,7 +311,7 @@ function App() {
 
   const fetchAlgorithms = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/compression/algorithms`);
+      const response = await axios.get(`${API_BASE_URL}/api/compression/algorithms`);
       if (Array.isArray(response.data)) {
         setAlgorithms(response.data);
         if(response.data.length > 0) {
@@ -329,7 +329,7 @@ function App() {
 
   const handleClearHistory = async () => {
     try {
-      await axios.delete(`${API_BASE_URL}/history`, {
+      await axios.delete(`${API_BASE_URL}/api/history`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setHistory([]);
