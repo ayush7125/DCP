@@ -1,136 +1,167 @@
 # 🚀 Data Compression & Decompression Portal
-- DEPLOYED-LINK: https://dcp-frontend.onrender.com/
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
-![React](https://img.shields.io/badge/React-18-blue)
-![MongoDB](https://img.shields.io/badge/MongoDB-%20-green)
-
-> **A modern, full-stack web app to compress & decompress files with advanced algorithms, beautiful UI, and real-time statistics.**
+A fullstack web application for compressing and decompressing files using multiple algorithms. Built with React (Vite) frontend and Node.js/Express backend, deployed on Render.
 
 ---
 
-## 🌟 Overview
-This portal lets you upload files, choose from multiple compression algorithms (Huffman, RLE, LZ77, LZW, Brotli), and instantly compress or decompress your data. Visualize compression stats, download results, and explore how modern algorithms work—all in a stunning, interactive interface.
+## 🌐 Live Demo
+
+- **Frontend:** [https://dcp-frontend.onrender.com](https://dcp-frontend.onrender.com)
+- **Backend:** [https://dcp-backend-617c.onrender.com](https://dcp-backend-617c.onrender.com)
 
 ---
 
-## ✨ Features
-- **🔼 File Upload:** Upload any file (text, image, binary)
-- **🧩 Multiple Algorithms:** Huffman, RLE, LZ77, LZW, Brotli
-- **🔄 Compress & Decompress:** One-click operations
-- **📊 Compression Stats:** Ratio, original size, compressed size, processing time
-- **⬇️ Download Results:** Get your processed files instantly
-- **📚 Algorithm Explanations:** Learn how each algorithm works
-- **🧠 Modern UI/UX:** Animated hero, parallax, tooltips, magnetic buttons, glassmorphism, custom scrollbars
-- **🧑‍💻 User Auth & History:** Register/login, view your compression history
-- **⚠️ Error Handling:** Friendly feedback for unsupported files or errors
-- **📱 Responsive:** Works beautifully on desktop & mobile
+## 📖 Project Overview
+
+This portal allows users to:
+- Register and log in securely
+- Upload files for compression or decompression
+- Choose from multiple algorithms (Huffman, RLE, LZ77, LZW, Brotli)
+- View and manage their compression history
+- Download processed files
+
+The app is designed for both educational and practical use, demonstrating how different compression algorithms work and their effectiveness.
 
 ---
 
-## 🛠️ Tech Stack
-**Frontend:**
-- React.js, Vite, Tailwind CSS, Framer Motion, Chart.js, Lottie, shadcn/ui
-
-**Backend:**
-- Node.js, Express.js, Multer, Custom JS Algorithms (Huffman, RLE, LZ77, LZW, Brotli)
-
-**Database:**
-- MongoDB (user info, file metadata, history)
+## 🧩 Tech Stack
+- **Frontend:** React (Vite), Tailwind CSS, Framer Motion
+- **Backend:** Node.js, Express, Multer, Mongoose
+- **Database:** MongoDB Atlas
+- **Auth:** JWT (JSON Web Tokens), bcryptjs
+- **Deployment:** Render.com
 
 ---
 
-## 🚀 Getting Started
+## 📦 Features
+- User authentication (sign up, login, JWT-based sessions)
+- File upload with drag-and-drop
+- Compression and decompression using:
+  - Huffman Coding
+  - Run-Length Encoding (RLE)
+  - LZ77
+  - LZW
+  - Brotli
+- Download compressed/decompressed files
+- Compression history (view, clear, download)
+- Responsive, modern UI with animations
+- Error handling and user feedback
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/yourusername/data-compression-portal.git
-cd data-compression-portal
+---
+
+## 🗂️ Project Structure
+```
+DCP/
+  backend/
+    algorithms/
+    controllers/
+    middleware/
+    models/
+    routes/
+    uploads/
+    app.js
+    ...
+  frontend/
+    src/
+      components/
+      App.jsx
+      ...
+    public/
+    ...
+  render.yaml
+  README.md
 ```
 
-### 2. Install dependencies
-```bash
-# Install backend dependencies
+---
+
+## 🛠️ Local Development
+
+### 1. Clone the repository
+```sh
+git clone https://github.com/ayush7125/DCP.git
+cd DCP
+```
+
+### 2. Setup Backend
+```sh
 cd backend
 npm install
-# Install frontend dependencies
+# Create a .env file (see below for example)
+node app.js
+```
+
+### 3. Setup Frontend
+```sh
 cd ../frontend
 npm install
-```
-
-### 3. Configure Environment
-- Copy `.env.example` to `.env` in `/backend` and set your MongoDB URI and JWT secret.
-
-### 4. Run the app (Development)
-```bash
-# In one terminal (backend)
-cd backend
-npm run dev
-# In another terminal (frontend)
-cd ../frontend
+# Create a .env file (see below for example)
 npm run dev
 ```
-- DEPLOYED-LINK: https://dcp-frontend.onrender.com/
-  
 
-### 5. Build for Production
-```bash
-cd frontend
-npm run build
-# Serve the built frontend from backend
-cd ../backend
-npm start
+### 4. Example .env Files
+**backend/.env**
+```
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+FRONTEND_URL=http://localhost:5173
+```
+**frontend/.env**
+```
+VITE_API_URL=http://localhost:5000
 ```
 
 ---
 
-## 🌐 Hosting & Deployment
+## 🚀 Deployment (Render)
 
-### Frontend
-- **Vercel** or **Netlify** (recommended for React/Vite apps)
-  1. Push your code to GitHub.
-  2. Go to [Vercel](https://vercel.com/) or [Netlify](https://netlify.com/) and create a new project.
-  3. Connect your repo, set build command to `npm run build` and output directory to `dist`.
-  4. Deploy!
+### 1. Deploy Backend
+- Create a new Web Service on Render
+- Set root directory to `backend`
+- Set build command: `npm install`
+- Set start command: `node app.js`
+- Add environment variables as above
 
-### Backend
-- **Render**, **Railway**, or **Heroku** (recommended for Node.js/Express)
-  1. Push your backend code to GitHub.
-  2. Go to [Render](https://render.com/), [Railway](https://railway.app/), or [Heroku](https://heroku.com/) and create a new web service.
-  3. Connect your repo, set the start command to `npm start` or `node app.js`.
-  4. Add environment variables (MongoDB URI, JWT secret, etc.) in the dashboard.
-  5. Deploy!
-
-**Tips:**
-- Set your backend API URL in the frontend (e.g., VITE_API_URL) for production.
-- Both Vercel/Netlify and Render/Railway/Heroku provide free HTTPS and custom domain support.
+### 2. Deploy Frontend
+- Create a new Web Service on Render
+- Set root directory to `frontend`
+- Set build command: `npm install && npm run build`
+- Set start command: `npm run preview -- --port $PORT`
+- Add environment variable: `VITE_API_URL` (pointing to your backend Render URL)
 
 ---
 
-## 🖼️ Screenshots
-> _Add your own screenshots below!_
-
-| Landing Page | Compression Stats | History |
-|:---:|:---:|:---:|
-| ![Landing](./screenshots/landing.png) | ![Stats](./screenshots/stats.png) | ![History](./screenshots/history.png) |
-
----
-
-## 📚 Algorithm Explanations
-- **Huffman Coding:** Optimal prefix coding for lossless compression. Best for text files with repeated characters.
-- **Run-Length Encoding (RLE):** Simple compression for data with repeated values. Good for images with large uniform areas.
-- **LZ77:** Sliding window-based compression. Good for general-purpose compression.
-- **LZW:** Dictionary-based compression ideal for text and repetitive data.
-- **Brotli:** Modern, high-performance compression. Excellent for web content.
+## 🏗️ Architecture Diagram
+```mermaid
+graph TD;
+  User-->|Browser|Frontend[Frontend (React/Vite)]
+  Frontend-->|API Calls|Backend[Backend (Express)]
+  Backend-->|DB|MongoDB[(MongoDB Atlas)]
+  Backend-->|File Uploads|Uploads[Uploads Folder]
+```
 
 ---
 
-## 🙏 Credits
-- UI inspired by [godly.website](https://godly.website/)
-- Built with ❤️ by [Your Name]
+## 🧑‍💻 Contributing
+1. Fork this repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Create a Pull Request
+
+---
+
+## 🐞 Troubleshooting
+- **404 errors:** Ensure all API calls in the frontend use `/api/...` after the backend URL.
+- **CORS issues:** Check that `FRONTEND_URL` in backend `.env` matches your frontend URL.
+- **MongoDB errors:** Verify your `MONGODB_URI` is correct and your IP is whitelisted in MongoDB Atlas.
+- **Port issues on Render:** Make sure Vite preview is set to `host: true` in `vite.config.js`.
 
 ---
 
 ## 📄 License
-[MIT](./LICENSE) 
+MIT
+
+---
+
+## 👤 Author
+- [ayush7125](https://github.com/ayush7125)
