@@ -130,15 +130,6 @@ VITE_API_URL=http://localhost:5000
 
 ---
 
-## 🏗️ Architecture Diagram
-```mermaid
-graph TD;
-  User-->|Browser|Frontend[Frontend (React/Vite)]
-  Frontend-->|API Calls|Backend[Backend (Express)]
-  Backend-->|DB|MongoDB[(MongoDB Atlas)]
-  Backend-->|File Uploads|Uploads[Uploads Folder]
-```
-
 ---
 
 ## 🧑‍💻 Contributing
