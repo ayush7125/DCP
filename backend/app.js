@@ -1,4 +1,8 @@
 const express = require('express');
+app.use((req, res, next) => {
+  console.log('Request:', req.method, req.originalUrl);
+  next();
+});
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
