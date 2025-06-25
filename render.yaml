@@ -3,8 +3,8 @@ services:
     name: dcp-backend
     env: node
     plan: free
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && node app.js
+    buildCommand: npm install
+    startCommand: node app.js
     envVars:
       - key: MONGODB_URI
         sync: false
@@ -19,8 +19,8 @@ services:
     name: dcp-frontend
     env: node
     plan: free
-    buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm run preview -- --port $PORT
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview -- --port $PORT
     envVars:
       - key: VITE_API_URL
         sync: false
