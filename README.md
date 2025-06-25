@@ -1,4 +1,5 @@
 # 🚀 Data Compression & Decompression Portal
+- DEPLOYED-LINK: https://dcp-frontend.onrender.com/
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
@@ -70,8 +71,8 @@ npm run dev
 cd ../frontend
 npm run dev
 ```
-- Frontend: [http://localhost:5173](http://localhost:5173)
-- Backend API: [http://localhost:5000/api](http://localhost:5000/api)
+- DEPLOYED-LINK: https://dcp-frontend.onrender.com/
+  
 
 ### 5. Build for Production
 ```bash
